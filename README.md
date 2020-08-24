@@ -14,3 +14,6 @@ A CMS-style blog site similar to a Wordpress site, where developers can publish 
 - express-handlebars
 - jest
 - sequelize
+
+## Questions
+If you have questions, email me at [vlane0593@gmail.com](mailto:vlane0593@gmail.com) or reach out on [GitHub](https://www.github.com/vanessalane).
