@@ -5,3 +5,12 @@ A CMS-style blog site similar to a Wordpress site, where developers can publish 
 
 ## User Story
 **As a** developer who writes about tech, **I want** a CMS-style blog site **so that** I can publish articles, blog posts, and my thoughts and opinions.
+
+## Packages
+- bcrypt
+- dotenv
+- express
+- express-session
+- express-handlebars
+- jest
+- sequelize
