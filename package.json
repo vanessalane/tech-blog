@@ -1,0 +1,35 @@
+{
+  "name": "tech-blog",
+  "version": "1.0.0",
+  "description": "A CMS-style blog site similar to a Wordpress site",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "migrate": "mysql -u root < db/schema.sql"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanessalane/tech-blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vanessalane/tech-blog/issues"
+  },
+  "homepage": "https://github.com/vanessalane/tech-blog#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "connect-session-sequelize": "^7.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "express-session": "^1.17.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^6.3.4"
+  },
+  "devDependencies": {
+    "jest": "^26.4.1"
+  }
+}
