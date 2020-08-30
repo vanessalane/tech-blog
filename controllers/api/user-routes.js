@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { User, Post } = require("../../models");
 const { beforeSync } = require('../../models/User');
 
-
 // GET /api/users
 router.get('/', (req, res) => {
     User.findAll({
