@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col s12 m6">
+        <div class="card">
+            <div class="card-content">
+                <a href="/post/1" class="card-title">Title</a>
+                {{#if user.username}}
+                    <p>Posted by {{user.username}} on {{format_date created_at}}</p>
+                {{/if}}
+            </div>
+            <div class="divider"></div>
+            <div class="card-content">
+                <p>body {{body}}</p>
+            </div>
+        </div>
+    </div>
+</div>
