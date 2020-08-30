@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="/stylesheets/main.css">
 </head>
 
-<body>
+<body class=" grey lighten-4">
   <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
@@ -22,11 +22,13 @@
         <ul class="right hide-on-med-and-down">
           <li><a href="/">home</a></li>
           <li><a href="/dashboard">dashboard</a></li>
-          {{#if loggedIn}}
-          <li><a href="/" id="logout">logout</a></li>
-          {{else}}
-          <li><a href="/login">login</a></li>
-          {{/if}}
+          <li>
+            {{#if loggedIn}}
+              <a href="/login" id="logout">log out</a>
+            {{ else }}
+              <a href="/login">log in</a>
+            {{/if}}
+          </li>
         </ul>
       </div>
     </nav>
@@ -44,13 +46,15 @@
 
   <main>
     <div class="container">
+      <div class="body-content">
       {{{ body }}}
+      </div>
     </div>
   </main>
 
   <footer class="page-footer">
     <div class="container">
-        <h6>Get in touch</h6>
+        <h5>Get in Touch</h5>
         <ul>
         <li><a class="white-text" href="https://github.com/vanessalane" target="_blank">vanessalane</a></li>
         <li><a class="white-text" href="mailto:vlane0593@gmail.com" target="_blank">vlane0593@gmail.com</a></li>

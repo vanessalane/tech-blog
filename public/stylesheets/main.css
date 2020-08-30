@@ -16,3 +16,15 @@ nav {
     padding-left: 16px;
 }
 /* end nav bar styles */
+
+/* start login form styles */
+.hidden {
+    display: none;
+}
+/* end login form styles */
+
+/* start body styles */
+.card {
+    border-radius: 5px;
+}
+/* end body styles */

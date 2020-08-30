@@ -1,47 +1,39 @@
 <div class="row">
-  <div class="col l6 s12">
-    <form class="login-form">
-        <h4>Log In</h4>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="login-email" type="email" class="validate">
-                <label for="login-email">Email</label>
+    <div class="col l8 s12 offset-l2">
+        <div class="row card">
+            <div class="col l10 s12 offset-l1 card-content">
+                <div class="card-title">
+                    <h5 class="auth-card-title teal-text darken-5 center-align">Log in</h5>
+                </div>
+                <form class="auth-form">
+                    <div class="row">
+                        <div class="input-field col s12 auth-email-container">
+                            <input id="auth-email" type="email">
+                            <label for="auth-email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 auth-username-container hidden">
+                            <input id="auth-username" type="text">
+                            <label for="auth-username">Username</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 auth-password-container">
+                            <input id="auth-password" type="password">
+                            <label for="auth-password">Password</label>
+                        </div>
+                    </div>
+                    <a class="waves-effect waves-light btn right btn-login">Log In</a>
+                    <a class="waves-effect waves-light btn right btn-signup hidden">Sign Up</a>
+                    <a class="btn right btn-flat btn-create-account">Create an Account</a>
+                    <a class="btn right btn-flat btn-login-instead hidden">I have an account</a>
+                </form>
             </div>
         </div>
-        <div class="row">
-            <div class="input-field col s12">
-            <input id="login-password" type="password" class="validate">
-            <label for="login-password">Password</label>
-            </div>
-        </div>
-        <button type="submit" class="waves-effect waves-light btn right">Log In</button>
-    </form>
-  </div>
-
-  <div class="col l6 s12">
-    <form class="signup-form">
-        <h4>Sign Up</h4>
-        <div class="row">
-            <div class="input-field col s12">
-            <input id="signup-email" type="email" class="validate">
-            <label for="signup-email">Email</label>
-            </div>
-        </div>
-         <div class="row">
-            <div class="input-field col s12">
-            <input id="signup-username" type="text" class="validate">
-            <label for="signup-username">Username</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-            <input id="signup-password" type="password" class="validate">
-            <label for="signup-password">Password</label>
-            </div>
-        </div>
-        <button type="submit" class="waves-effect waves-light btn right">Sign Up</button>
-    </form>
-  </div>
+    </div>
 </div>
+
+
 
 <script src="/javascript/login.js"></script>
