@@ -1,0 +1,18 @@
+
+/* start materialize sticky footer */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+/* end materialize sticky footer */
+
+/* start nav bar styles */
+nav {
+    padding-left: 16px;
+}
+/* end nav bar styles */
