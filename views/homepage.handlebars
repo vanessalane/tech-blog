@@ -1,0 +1,10 @@
+<div class="posts">
+    {{#unless posts }}
+        <p class="center-align">No posts to display!</p>
+    {{/unless}}
+    <div class="row">
+        {{#each posts}}
+            {{> post-info }}
+        {{/each}}
+    </div>
+</div>
