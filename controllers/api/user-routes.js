@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User, Post } = require("../../models");
 const { beforeSync } = require('../../models/User');
 
+
 // GET /api/users
 router.get('/', (req, res) => {
     User.findAll({
@@ -60,6 +61,7 @@ router.post('/', (req, res) => {
    });
 });
 
+// POST /api/users/login
 router.post('/login', (req, res) => {
     User.findOne({
         where: {
@@ -89,6 +91,7 @@ router.post('/login', (req, res) => {
     });
 });
 
+// POST /api/users/logout
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
       req.session.destroy(() => {
@@ -100,6 +103,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
+// PUT /api/users/1
 router.put('/:id', (req, res) => {
     User.update(req.body, {
         individualHooks: true,
