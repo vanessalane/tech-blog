@@ -1,5 +1,6 @@
 async function deleteFormHandler(event) {
     event.preventDefault();
+    console.log(event.target);
 
     const postCard = event.target.parentElement;
     const id = postCard.getAttribute("data-post-id");
@@ -15,4 +16,7 @@ async function deleteFormHandler(event) {
     }
 }
 
-document.querySelector('.delete-post-btn').addEventListener('click', deleteFormHandler);
+const deleteBtns = document.querySelectorAll('.delete-post-btn');
+deleteBtns.forEach((btn) => {
+    btn.addEventListener('click', deleteFormHandler)
+})
