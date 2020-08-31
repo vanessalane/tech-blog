@@ -1,6 +1,5 @@
 async function logIn(email, password) {
-  console.log(email, password);
-  const loginResponse = await fetch('/api/users/login', {
+  const response = await fetch('/api/users/login', {
     method: 'post',
     body: JSON.stringify({
       email,
@@ -8,16 +7,25 @@ async function logIn(email, password) {
     }),
     headers: { 'Content-Type': 'application/json' }
   });
-  
-  if (loginResponse.ok) {
-    document.location.replace('/dashboard');
-  } else {
-    alert(loginResponse.statusText);
+
+  // if the user could log in, send them to their dashboard
+  if (response.ok) {
+      document.location.replace('/dashboard');
+  }
+  else {
+    // otherwise, get the data from the response and surface the error to the user
+    response.json().then(data => {
+      const latestError = data.message;
+      document.querySelector("#auth-error").textContent = latestError;
+    })
   }
 }
 
 async function loginFormHandler(event) {
   event.preventDefault();
+
+  // clear any prior messages
+  document.querySelector("#auth-error").textContent = '';
 
   const email = document.querySelector('#auth-email').value.trim();
   const password = document.querySelector('#auth-password').value.trim();
@@ -29,6 +37,10 @@ async function loginFormHandler(event) {
 
 async function signupFormHandler(event) {
   event.preventDefault();
+
+  // clear any prior messages
+  document.querySelector("#auth-error").textContent = '';
+
   const username = document.querySelector('#auth-username').value.trim();
   const email = document.querySelector('#auth-email').value.trim();
   const password = document.querySelector('#auth-password').value.trim();
@@ -44,18 +56,37 @@ async function signupFormHandler(event) {
       headers: { 'Content-Type': 'application/json' }
     });
 
+    // if the credentials seem ok, try logging in
     if (response.ok) {
       logIn(email, password);
     }
     else {
-      console.log(response);
-      alert(response.statusText)
+      // otherwise, get the data from the response and surface the error to the user
+      response.json().then(data => {
+        const latestError = data.errors[0];
+
+        // handle uniqueness constraints that can't be customized in sequelize
+        switch (latestError.message) {
+          case "user.user_email_unique must be unique":
+            latestError.message = "An account with that email already exists! Please try logging in."
+            break;
+          case "user.user_username_unique must be unique":
+            latestError.message = "Username taken!"
+            break;
+        }
+
+        // add the error to the template
+        document.querySelector("#auth-error").textContent = latestError.message;
+      })
     }
   }
 }
 
 function displaySignupForm() {
   event.preventDefault();
+
+  // clear any prior messages
+  document.querySelector("#auth-error").textContent = '';
 
   // hide the login form
   document.querySelector('.btn-login').classList.add('hidden');
@@ -71,6 +102,9 @@ function displaySignupForm() {
 function displayLoginForm() {
   event.preventDefault();
 
+  // clear any prior messages
+  document.querySelector("#auth-error").textContent = '';
+
   // hide the signup form
   document.querySelector('.btn-login-instead').classList.add('hidden');
   document.querySelector('.btn-signup').classList.add('hidden');
@@ -82,7 +116,6 @@ function displayLoginForm() {
   document.querySelector('.auth-card-title').textContent = "Log In";
 
 }
-
 
 document.querySelector('.btn-login-instead').addEventListener('click', displayLoginForm);
 document.querySelector('.btn-create-account').addEventListener('click', displaySignupForm);
