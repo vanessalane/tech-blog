@@ -1,6 +1,7 @@
+
+<h4>Comments</h4>
 <div class="comments card">
   <section class="card-content">
-    <div class="card-title">Comments</div>
     {{#if loggedIn}}
       <form class="comment-form">
 
@@ -31,10 +32,10 @@
   {{#each post.comments}}
     <div class="divider"></div>
     <section class="comment card-content">
-          <em>{{user.username}} on {{format_date created_at}}</em>
-        <blockquote>
-          {{comment_text}}
-        </blockquote>
+        <h6>{{user.username}}</h6>
+        <p><em>{{format_date created_at}}</em></p>
+        <br>
+        <p>{{comment_text}}</p>
     </section>
   {{/each}}
 </div>

@@ -2,7 +2,7 @@
   <h4>Your Posts</h4>
 
   {{#each posts as |post|}}
-    {{> post-info post}}
+    {{> post-info post dashboard=true}}
   {{/each}}
 
 {{else}}
@@ -28,3 +28,5 @@
     <a href="/posts/add" class="waves-effect waves-light btn">Add a Post</a>
   </div>
 </div>
+
+<script src="/javascript/delete-post.js"></script>

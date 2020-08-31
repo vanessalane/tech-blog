@@ -1,18 +1,25 @@
-<div class="col s12 m8 offset-m2">
-  <div class="card">
-    <div class="card-content">
-      <a href="/post/1" class="card-title">{{title}}</a>
-      <p>Posted by {{user.username}} on {{format_date created_at}}</p>
-        <div class="card-actions">
-          <a class="btn-floating btn waves-effect waves-light red right delete-post-btn"><i class="material-icons">delete</i></a>
-          <a class="btn-floating btn waves-effect waves-light amber right" href="/posts/edit/{{id}}"><i class="material-icons">edit</i></a>
-        </div>
-    </div>
-    <div class="divider"></div>
-    <div class="card-content">
-      <p>{{body}}</p>
-    </div>
+{{#if unlinked_title}}
+<h4>{{title}}</h4>
+{{/if}}
+
+<div class="card">
+  <div class="card-content">
+    {{#unless unlinked_title}}
+    <a href="/post/{{id}}" class="card-title">{{title}}</a>
+    {{/unless}}
+    <p>Posted by {{user.username}} on {{format_date created_at}}</p>
+
+    {{#if dashboard}}
+      <div class="card-actions">
+        <a class="btn-floating btn waves-effect waves-light red right delete-post-btn" data-post-id="{{id}}"><i class="material-icons">delete</i></a>
+        <a class="btn-floating btn waves-effect waves-light amber right" href="/posts/edit/{{id}}"><i class="material-icons">edit</i></a>
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="card-content">
+    <p>{{body}}</p>
   </div>
 </div>
-
-<script src="/javascript/delete-post.js"></script>
