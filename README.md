@@ -1,4 +1,5 @@
 # tech-blog
+Deployed app: https://fast-scrubland-56960.herokuapp.com/
 
 ## Description
 A CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well.
@@ -8,6 +9,7 @@ A CMS-style blog site similar to a Wordpress site, where developers can publish 
 
 ## Packages
 - bcrypt
+- connect-session-sequelize
 - dotenv
 - express
 - express-session
