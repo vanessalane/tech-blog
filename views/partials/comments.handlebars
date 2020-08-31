@@ -1,7 +1,6 @@
-<h5>Add a comment</h5>
-
 <div class="comments card">
   <section class="card-content">
+    <div class="card-title">Comments</div>
     {{#if loggedIn}}
       <form class="comment-form">
 
@@ -21,18 +20,16 @@
       <a href="/login">Log in to leave a comment.</a>
     {{/if}}
   </section>
-</div>
 
-<h5>Comments</h5>
-
-<div class="comments card">
   {{#unless post.comments}}
+    <div class="divider"></div>
     <section class="card-content">
       No comments to display!
     </section>
   {{/unless}}
 
   {{#each post.comments}}
+    <div class="divider"></div>
     <section class="comment card-content">
           <em>{{user.username}} on {{format_date created_at}}</em>
         <blockquote>
