@@ -2,22 +2,21 @@
 <h4>{{title}}</h4>
 {{/if}}
 
+<h6 class="red-text center-align" id="post-{{id}}-error"></h6>
 <div class="card">
   <div class="card-content">
-    {{#unless unlinked_title}}
-    <a href="/post/{{id}}" class="card-title">{{title}}</a>
-    {{/unless}}
-    <p>Posted by {{user.username}} on {{format_date created_at}}</p>
-
     {{#if dashboard}}
       <div class="card-actions">
         <a class="btn-floating btn waves-effect waves-light red right delete-post-btn" data-post-id="{{id}}"><i class="material-icons">delete</i></a>
         <a class="btn-floating btn waves-effect waves-light amber right" href="/posts/edit/{{id}}"><i class="material-icons">edit</i></a>
       </div>
     {{/if}}
-  </div>
+    {{#unless unlinked_title}}
+    <a href="/post/{{id}}" class="card-title">{{title}}</a>
+    {{/unless}}
+    <p>Posted by {{user.username}} on {{format_date created_at}}</p>
 
-  <div class="divider"></div>
+  </div>
 
   <div class="card-content">
     <p>{{body}}</p>
