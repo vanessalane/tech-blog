@@ -14,7 +14,7 @@ A CMS-style blog site similar to a Wordpress site, where developers can publish 
 - express
 - express-session
 - express-handlebars
-- jest
+- mysql2
 - sequelize
 
 ## Questions
