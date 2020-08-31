@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "A CMS-style blog site similar to a Wordpress site",
   "engines": {
-    "node": "12.18.2",
-    "npm": "6.14.5"
+    "node": "14.6.0",
+    "npm": "6.14.7"
   },
   "main": "server.js",
   "scripts": {
