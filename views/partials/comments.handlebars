@@ -1,37 +1,38 @@
+<h5>Add a comment</h5>
+
 <div class="comments card">
   <section class="card-content">
-    <div class="card-title">Comments</div>
     {{#if loggedIn}}
       <form class="comment-form">
 
         <div class="row">
           <div class="input-field col s12"> 
-          <textarea id="comment-body" class="materialize-textarea"></textarea>
-          <label for="comment-body">Leave a Comment</label> 
+            <textarea id="comment-body" class="materialize-textarea"></textarea>
+            <label for="comment-body">Leave a Comment</label>
+          </div>
+
+          <div class="input-field col s12"> 
+            <button type="submit" class="waves-effect waves-light btn right">Add Comment</button>
           </div>
         </div>
 
-        <div class="row">
-          <div class="input-field col s12"> 
-           <button type="submit" class="waves-effect waves-light btn right">Add Comment</button>
-          </div>
-        </div>
-        
       </form>
     {{else}}
       <a href="/login">Log in to leave a comment.</a>
     {{/if}}
   </section>
+</div>
 
+<h5>Comments</h5>
+
+<div class="comments card">
   {{#unless post.comments}}
-    <div class="divider"></div>
     <section class="card-content">
       No comments to display!
     </section>
   {{/unless}}
 
   {{#each post.comments}}
-    <div class="divider"></div>
     <section class="comment card-content">
           <em>{{user.username}} on {{format_date created_at}}</em>
         <blockquote>
