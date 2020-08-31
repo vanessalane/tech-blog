@@ -20,7 +20,6 @@ async function newFormHandler(event) {
     } else {
       alert(response.statusText);
     }
-  }
+}
 
-const container = document.getElementById(".add-post-form-container");
-container.querySelector('.post-form').addEventListener('submit', editFormHandler);
+document.querySelector('.add-post-form').addEventListener('submit', newFormHandler);

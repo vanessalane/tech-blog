@@ -1,8 +1,27 @@
-<h4>New Post</h4>
-
-<div class="new-post-form card">
+<div class="card">
   <section class="card-content">
-    {{> post-form}}
+    <div class="card-title">Add a post</div>
+    <form class="add-post-form">
+      <div class="row">
+          <div class="input-field col s12">
+              <input id="post-title" type="text"></input>
+              <label for="post-title">Title</label>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="input-field col s12">
+              <textarea id="post-body" class="materialize-textarea"></textarea>
+              <label for="post-body">Body</label>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="input-field col s12">
+              <button type="submit" class="waves-effect waves-light btn right">Save Post</button>
+          </div>
+      </div>
+    </form>
   </section>
 </div>
 
