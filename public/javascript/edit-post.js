@@ -22,7 +22,5 @@ async function editFormHandler(event) {
         alert(response.statusText);
     }
 }
-  
 
-const container = document.getElementById(".edit-post-form-container");
-container.querySelector('.post-form').addEventListener('submit', editFormHandler);
+document.querySelector('.edit-post-form').addEventListener('submit', editFormHandler);

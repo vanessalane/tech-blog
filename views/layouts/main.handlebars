@@ -37,11 +37,13 @@
   <ul class="sidenav" id="mobile-menu">
     <li><a href="/">home</a></li>
     <li><a href="/dashboard">dashboard</a></li>
-    {{#if loggedIn}}
-    <li><a href="/logout">logout</a></li>
-    {{else}}
-    <li><a href="/login">login</a></li>
-    {{/if}}
+    <li>
+      {{#if loggedIn}}
+        <a href="/login" id="logout">log out</a>
+      {{ else }}
+        <a href="/login">log in</a>
+      {{/if}}
+    </li>
   </ul>
 
   <main>
@@ -71,6 +73,10 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="javascript/navigation.js"></script>
+
+  {{#if loggedIn}}
+  <script src="javascript/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>
