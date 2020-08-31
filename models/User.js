@@ -18,22 +18,50 @@ User.init(
         },
         username: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false, 
+            validate: {
+                min: {
+                    args: 3,
+                    msg: 'Username must be between 3 and 40 characters.'
+                },
+                max: {
+                    args: 40,
+                    msg: 'Username must be between 3 and 40 characters.'
+                },
+                is: {
+                    args: /^[A-Za-z][A-Za-z0-9-_]+$/i,
+                    msg: 'Username must start with a letter, and can include letters, numbers, dashes, and underscores.'
+                }
+            },
         },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true,
+            unique:  {
+                args: true,
+                msg: 'An account with this email address already exists. Please try to login.',
+                fields: [sequelize.fn('lower', sequelize.col('email'))]
+            },
             validate: {
-                isEmail: true
+                isEmail: {
+                    args: true,
+                    msg: 'Please provide a valid email address.'
+                },
             }
         },
         password: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [8]
-            }
+                min: {
+                    args: 6,
+                    msg: 'Password must be between 6 and 40 characters.'
+                },
+                max: {
+                    args: 40,
+                    msg: 'Password must be between 6 and 40 characters.'
+                }
+            },
         },
     },
     {
