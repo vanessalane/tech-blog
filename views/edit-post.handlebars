@@ -1,0 +1,30 @@
+<div class="card">
+  <section class="card-content">
+    <div class="card-title teal-text darken-5 center-align">
+      Edit Post
+    </div>
+    <form class="edit-post-form">
+      <div class="row">
+          <div class="input-field col s12">
+              <input id="post-title" type="text" value="{{post.title}}"></input>
+              <label for="post-title">Title</label>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="input-field col s12">
+              <textarea id="post-body" class="materialize-textarea">{{post.body}}</textarea>
+              <label for="post-body">Body</label>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="input-field col s12">
+              <button type="submit" class="waves-effect waves-light btn right">Save Post</button>
+          </div>
+      </div>
+    </form>
+  </section>
+</div>
+
+<script src="/javascript/edit-post.js"></script>

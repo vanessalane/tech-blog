@@ -1,12 +1,45 @@
-<div class="comments">
-    {{#each this}}
-    <section class="comment">
-        <div class="meta">
-            {{user.username}} on {{format_date created_at}}
+
+<h4>Comments</h4>
+<div class="comments card">
+  <section class="card-content">
+    {{#if loggedIn}}
+      <form class="comment-form">
+
+        <div class="row">
+          <div class="input-field col s12"> 
+            <textarea id="comment-body" class="materialize-textarea"></textarea>
+            <label for="comment-body">Leave a Comment</label>
+          </div>
+
+          <div class="input-field col s12"> 
+            <button type="submit" class="waves-effect waves-light btn right">Add Comment</button>
+          </div>
         </div>
-        <div class="text">
-            {{comment_text}}
-        </div>
+
+      </form>
+    {{else}}
+      <a href="/login">Log in to leave a comment.</a>
+    {{/if}}
+  </section>
+
+  {{#unless post.comments}}
+    <div class="divider"></div>
+    <section class="card-content">
+      No comments to display!
     </section>
-    {{/each}}
+  {{/unless}}
+
+  {{#each post.comments}}
+    <div class="divider"></div>
+    <section class="comment card-content">
+        <h6>{{user.username}}</h6>
+        <p><em>{{format_date created_at}}</em></p>
+        <br>
+        <p>{{comment_text}}</p>
+    </section>
+  {{/each}}
 </div>
+
+{{#if loggedIn}}
+  <script src="/javascript/comment.js"></script>
+{{/if}}
