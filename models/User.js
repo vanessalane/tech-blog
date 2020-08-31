@@ -18,21 +18,36 @@ User.init(
         },
         username: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            unique:  {
+                args: true,
+                message: 'Username taken!',
+                fields: ['username']
+            },
         },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true,
+            unique:  {
+                args: true,
+                message: 'An account already exists with this email address. Please try to login.',
+                fields: [sequelize.fn('lower', sequelize.col('email'))]
+            },
             validate: {
-                isEmail: true
+                isEmail: {
+                    args: true,
+                    msg: "Please provide a valid email address."
+                }
             }
         },
         password: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [8]
+                len: {
+                    args: [6, 30],
+                    msg: "Password should be between 6-30 characters."
+                }
             }
         },
     },

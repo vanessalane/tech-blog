@@ -24,6 +24,10 @@ nav {
 /* end login form styles */
 
 /* start body styles */
+.btn-flat:hover {
+    background-color: none;
+    font-weight: bold;
+}
 .card {
     border-radius: 5px;
 }

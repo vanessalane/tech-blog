@@ -3,7 +3,7 @@
         <div class="row card">
             <div class="col l10 s12 offset-l1 card-content">
                 <div class="card-title">
-                    <h5 class="auth-card-title teal-text darken-5 center-align">Log in</h5>
+                    <h4 class="auth-card-title center-align">Log In</h4>
                 </div>
                 <form class="auth-form">
                     <div class="row">
@@ -24,10 +24,17 @@
                             <label for="auth-password">Password</label>
                         </div>
                     </div>
-                    <a class="waves-effect waves-light btn right btn-login">Log In</a>
-                    <a class="waves-effect waves-light btn right btn-signup hidden">Sign Up</a>
-                    <a class="btn right btn-flat btn-create-account">Create an Account</a>
-                    <a class="btn right btn-flat btn-login-instead hidden">I have an account</a>
+                    <div class="row center-align">
+                        <h6 class="red-text center-align" id="auth-error"></h6>
+                        <div class="input-field col s12">
+                            <a class="waves-effect indigo waves-light btn btn-login">Log In</a>
+                            <a class="waves-effect indigo waves-light btn btn-signup hidden">Sign Up</a>
+                        </div>
+                        <div class="input-field col s12">
+                            <a class="center waves-effect btn-flat btn-create-account">Create an Account</a>
+                            <a class="center waves-effect btn-flat btn-login-instead hidden">I have an account</a>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
