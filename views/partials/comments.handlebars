@@ -3,11 +3,20 @@
     <div class="card-title">Comments</div>
     {{#if loggedIn}}
       <form class="comment-form">
-        <div class="input-field">
+
+        <div class="row">
+          <div class="input-field col s12"> 
           <textarea id="comment-body" class="materialize-textarea"></textarea>
           <label for="comment-body">Leave a Comment</label> 
-          <button type="submit" class="waves-effect waves-light btn right">Add Comment</button>
+          </div>
         </div>
+
+        <div class="row">
+          <div class="input-field col s12"> 
+           <button type="submit" class="waves-effect waves-light btn right">Add Comment</button>
+          </div>
+        </div>
+        
       </form>
     {{else}}
       <a href="/login">Log in to leave a comment.</a>

@@ -1,0 +1,43 @@
+<div class="new-post-form card">
+  <section class="card-content">
+      <div class="card-title">Write a New Post</div>
+
+      <form class="post-form">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="post-title" type="text"></input>
+            <label for="post-title">Title</label> 
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="post-body" class="materialize-textarea"></textarea>
+            <label for="post-body">Body</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <button type="submit" class="waves-effect waves-light btn right">Save Post</button>
+          </div>
+        </div>
+      </form>
+  </section>
+</div>
+
+{{#if posts.length}}
+<section>
+  <h2>Your Posts</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post}}
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<script src="/javascript/add-post.js"></script>
